@@ -250,7 +250,17 @@
           // scrollbar: '.swiper-scrollbar',
         });
 
-        mySwiper.slideTo(getRandomArbitrary(0, data.length), 1000, false);
+        (function(){
+          var index,
+            hashIndex = window.location.hash.match(/\d+/)
+          ;
+
+          if (hashIndex) {
+            index = parseInt(hashIndex[0]) - 1;
+          }
+
+          mySwiper.slideTo(index || getRandomArbitrary(0, data.length), 1000, false);
+        }())
       };
     }());
   </script>
