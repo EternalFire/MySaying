@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta content="telephone=no" name="format-detection" />
+  <!-- <link rel="apple-touch-icon-precomposed" href="app-icon.png" /> -->
+  <!-- <link rel="apple-touch-startup-image" href="app-startup.png" /> -->
+
+  <title>Saying</title>
+  <link rel="stylesheet" href="//cdn.bootcss.com/Swiper/3.4.1/css/swiper.min.css">
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-flow: column wrap;
+      height: 100vh;
+      font-size: 18px;
+      background-color: silver;
+    }
+    
+    body > header {
+      flex: 1;
+    }
+    main {
+      flex: 4;
+      width: 100%;
+      margin: auto;
+    }
+    body > footer {
+      flex: 1;
+    }
+
+    .swiper-container {}
+
+    .swiper-slide {
+      background: gold;
+      /*height: 300px;*/
+      display: flex;
+      margin: auto;
+      align-items: center;
+      justify-content: center;
+      font-size: 2em;
+    }
+
+    .swiper-slide span {
+      margin-left: 1em;
+      margin-right: 1em;
+      line-height: 1.5em;
+      position: relative;
+      margin-top: -15%;      
+    }
+
+    .swiper-slide span:first-letter {
+      font-size: 2em;
+    }
+
+    .swiper-slide span:before {
+      border-top: 3px solid black;
+      border-left: 3px dashed black;
+      border-top-left-radius: 5px;
+      width: 100%;
+      height: 3.2em;
+      display: block;
+      content: "";
+      position: absolute;
+      transform: translate(-0.5em, -1em);
+    }
+/*
+    .swiper-pagination span {
+      margin: 10px 0 !important;
+      width: auto !important;
+      height: auto !important;
+      padding: 2px 5px;
+      color: black;
+    }
+    .swiper-pagination-bullet {
+      background: hsla(280, 4%, 55%, 0.5) !important;
+      opacity: 1.0 !important;
+    }
+    .swiper-pagination-bullet-active {
+      color: white !important;
+      background: hsl(30, 100%, 50%) !important;
+    }
+*/
+  </style>
+</head>
+<body>
+  <!-- <header>header</header> -->
+  <main class="swiper-container">
+    <div class="swiper-wrapper">
+<!--         <div class="swiper-slide">
+          <span class="swiper-no-swiping">Slide 1</span>
+          </div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div> -->
+    </div>
+
+    <!-- 如果需要分页器 -->
+    <div class="swiper-pagination"></div>
+    
+    <!-- 如果需要导航按钮 -->
+    <!-- <div class="swiper-button-prev"></div> -->
+    <!-- <div class="swiper-button-next"></div> -->
+    
+    <!-- 如果需要滚动条 -->
+    <!-- <div class="swiper-scrollbar"></div> -->
+  </main>
+  <!-- <footer>footer</footer> -->
+
+  <script src="//cdn.bootcss.com/Swiper/3.4.1/js/swiper.min.js"></script>
+  <script>
+    (function() {
+      function getRandomArbitrary(min, max) {
+        return Math.random() * (max - min) + min;
+      }
+
+      var data = [
+"主要处理抽象, 抽象现实问题, 以给计算机解决.",
+"抽象, 即接口化.",
+"焦躁时, 尝试短时间内专注某个方面, 以平稳心态.",
+"读书, 看教程, 应尽可能做笔记( 云端笔记 便于备份 ), 同样的内容, 转述一遍就是自己的东西了.",
+"考虑太多? 不妨先迈出第一步.",
+"Parctice makes better / perfect.",
+"遇到问题, 多动手实验/试错, 以便于找到好方法.",
+"把梦(白日梦)记下来, 万一哪天梦想成真, 就可以当预言家了.",
+"多做待办列表, 让自己忙起来, 太忙了就去掉一些小项.",
+"多做总结(解决问题的方法, 知识点, 踩坑经历, 技巧, 工具使用等), 保持创作的活力.",
+"勇敢地面对新事物, 辩证看待, 分析它.",
+"Read-Search-Ask.",
+"投资不一定会有回报.",
+"养成全局观, 因为\"登高望远\", \"换位思考\", \"豁然开朗\".",
+"基本功扎实, 才可以随心所欲(为所欲为).",
+"善用资源, 特别是时间.",
+"一口啃不完, 就多啃几口, 啃重要部位.",
+"请借助活跃的社区环境, 因为一个人的力量总是有限的, 微小的.",
+"如同井中取水, 深入以获得更多.",
+"编程语言是工具, 框架, 库是工具的工具(<_<).",
+"Stay Hungry, Stay Foolish",
+"坚持.",
+"爬, 滚, 走, 跑, 跳, 游, 攀, 蹲, 飞......",
+"学习, 就是锻炼抽象能力.",
+"站在巨人的肩膀上.",
+"世上没有奇迹, 有的只是偶然和必然, 还有, 人的所作所为.",
+"心动不如行动.",
+"语言本身就是一种抽象.",
+"剪贴本 与 网页HTML的块元素,行内元素, 好像有所相似.",
+"界面库, 界面标记是用来描述界面的工具.",
+"风光的背后, 不是沧桑, 就是肮脏.",
+"使用工具, 先看一眼文档, 它(工具)没有那么简单.",
+"站点地图就是树.",
+"保持创造力.",
+"收集, 编辑, 发布(搜索, 拷贝, 编辑, 总结, 传播), 应使用markdown做总结.",
+"书上的知识, 互联网的工具, 增加输出(生产力).",
+"尽快总结出自己的学习方式.",
+"链, 管道, 表示一种连通的关系.",
+"我掌握了什么? 哪些似懂非懂? 哪些不懂?",
+"你必须非常努力, 才能做到看起来毫不费力.",
+"当一个个零件拼装起来后, 才会发现哪些地方是比较容易出问题的.",
+"verything should be made as simple as possible, but no simpler. 凡事都应该尽可能简单, 但也不能过于简单.",
+"一个领域就是一张图, 每个知识点就是节点, 专业程度可以用节点的权重表示. 跨界就是不同的图建立起联系.",
+"拥抱变化.",
+"对所做的事充满激情, 对所知道的坦然无惧地分享(网页设计创意书).",
+"不是自己的东西, 就不懂珍惜?",
+"熟练一种创造性的工具, 当收获发散的灵感时, 就可以快速创造作品.",
+"习惯性创造, 不用管创造的东西的价值如何, 因为那是优秀的习惯.",
+"读读别人的代码, 虚心学习",
+"不断磨炼一种技能, 直到炉火纯青.",
+"总有人低估你的任何努力或成就.",
+"大脑不一定都是清醒的, 必要时跟着任务清单走.",
+"看番如学习, 看一个合集, 剧情连贯, 套路清晰, 看着过瘾; 准备好材料, 一鼓作气的学.",
+"我们好像还没默契到通过两个表情, 猜透对方的心.",
+"没什么好说的, 复制粘贴一个字就是干.",
+"教育面向现代化, 面向世界, 面向未来.",
+"人会失败，会死去，但思想会永远留下来.",
+"数据驱动, 看起来像数形结合?",
+"黑客把数据弄到手, 然后再进行数据挖掘?",
+"应用(app), 是现实中某种流程的反映.",
+"信息量不对称非常明显时, 骗局就会发生.",
+"软件即服务, 先把自己服务好再说.",
+"思维导图有助于整理思路",
+"掌握一个知识点, 就等于说, 闭上眼就能说出来.",
+"看书做题是为了补完自己的知识体系.",
+"领域模型 => 业务结构 => 标准数据结构 => 算法",
+"遍历所有组合情况, 也许是不可能的, 但熟悉所有基础功能是可能的.",
+"前端的精髓之一是随心所欲操作DOM( 结构, 样式, 行为 ).",
+"读一本书, 先根据目录绘制思维导图",
+"慎重购买版本变动较大的技术书籍, 应购买沉淀下来的技术书籍",
+"扑街了不要紧, 起来扑多次",
+"赞美别人, 自己并不会缺少什么",
+"受到的刺激越多越大, 记性就越好. 这或许是长辈喜欢打晚辈的理由.",
+"人们都向往美好",
+"没有人带, 就自己成长吧.",
+"每个瞬间只能做一件事情",
+"算法与设计模式差不多, 都是关于问题的解法"
+      ];
+      
+      window.onload = function() {
+        data.forEach(function(e, i) {
+          // if ( i > 10) return;
+          // 设置幻灯片
+          var div = document.createElement('div');
+          div.className += ' swiper-slide';
+          div.dataset.hash = 'note' + (i + 1);
+          div.style.background = 'hsl(' + ((10 * i) % 360) + ', 100%, 73%)';
+
+          // 设置内容
+          var span = document.createElement('span');
+          span.className += ' swiper-no-swiping';
+          span.innerText = e;
+
+          // 添加幻灯片
+          div.appendChild(span);
+          document.querySelector('.swiper-wrapper').appendChild(div);
+        });
+
+        var mySwiper = new Swiper ('.swiper-container', {
+          // direction: 'horizontal',
+          direction: 'vertical',
+
+          // loop: true,
+          // autoplay: 1000,
+          keyboardControl: true,
+          mousewheelControl: true,
+
+          // effect : 'fade',
+          // fade: {
+          //   crossFade: false,
+          // },
+
+          grabCursor : true,
+          hashnav: true,
+          hashnavWatchState: true,
+          
+          // 如果需要分页器
+          pagination: '.swiper-pagination',
+          paginationClickable: true,
+          // paginationBulletRender: function (swiper, index, className) {
+          //   return '<span class="' + className + '"> ' + (index + 1) + ' </span>';
+          // },
+          
+          // 如果需要前进后退按钮
+          // nextButton: '.swiper-button-next',
+          // prevButton: '.swiper-button-prev',
+          
+          // 如果需要滚动条
+          // scrollbar: '.swiper-scrollbar',
+        });
+
+        mySwiper.slideTo(getRandomArbitrary(0, data.length), 1000, false);
+      };
+    }());
+  </script>
+</body>
+</html>
